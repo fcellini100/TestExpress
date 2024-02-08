@@ -11,5 +11,5 @@ Testing ExpressJs
 ## Run Locally
 
 ```bash
-  npm start
+  npm run dev
 ```
