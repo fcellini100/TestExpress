@@ -12,8 +12,15 @@ app.use((req, _res, next) => {
   next();
 });
 
-app.get('/', (_req, res) => {
-  res.send({ message: 'Hello, World!' });
+app.get('/', async (req, res) => {
+  try {
+    const addUserUseCase = new AddUserUseCase(userRepositoryLocal);
+    const user = await addUserUseCase.execute(req.body);
+
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 });
 
 app.listen(PORT, () => {

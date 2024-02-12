@@ -4,6 +4,12 @@ class User {
     this.name = name;
     this.email = email;
   }
+
+  validate() {
+    if (!this.name || !this.email) {
+      throw new Error('User data is incomplete.');
+    }
+  }
 }
 
 module.exports = User;
