@@ -3,8 +3,8 @@ class UserRepository {
     throw new Error("Method 'add' must be implemented.");
   }
 
-  findById(_userId) {
-    throw new Error("Method 'findById' must be implemented.");
+  getUserById(_userId) {
+    throw new Error("Method 'getUserById' must be implemented.");
   }
 
   update(_user) {
@@ -15,8 +15,8 @@ class UserRepository {
     throw new Error("Method 'delete' must be implemented.");
   }
 
-  findAll() {
-    throw new Error("Method 'findAll' must be implemented.");
+  getAllUsers() {
+    throw new Error("Method 'getAllUsers' must be implemented.");
   }
 }
 

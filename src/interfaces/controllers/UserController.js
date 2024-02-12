@@ -5,7 +5,7 @@ const userRepository = new UserRepositoryLocal();
 
 const manageUsersUseCase = new ManageUsersUseCase(userRepository);
 
-exports.createUser = async (req, res) => {
+createUser = async (req, res) => {
   try {
     const user = await manageUsersUseCase.addUser(req.body);
     res.status(201).json(user);
@@ -14,9 +14,9 @@ exports.createUser = async (req, res) => {
   }
 };
 
-exports.getUserById = async (req, res) => {
+getUserById = async (req, res) => {
   try {
-    const user = await manageUsersUseCase.findUserById(req.params.id);
+    const user = await manageUsersUseCase.getUserById(req.params.id);
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });
     }
@@ -26,16 +26,16 @@ exports.getUserById = async (req, res) => {
   }
 };
 
-exports.updateUser = async (req, res) => {
+updateUser = async (req, res) => {
   try {
-    const user = await manageUsersUseCase.updateUser(req.body);
+    const user = await manageUsersUseCase.updateUser(req.params.id, req.body);
     res.json(user);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 };
 
-exports.deleteUser = async (req, res) => {
+deleteUser = async (req, res) => {
   try {
     await manageUsersUseCase.deleteUser(req.params.id);
     res.status(204).send();
@@ -44,11 +44,19 @@ exports.deleteUser = async (req, res) => {
   }
 };
 
-exports.getAllUsers = async (_req, res) => {
+getAllUsers = async (_req, res) => {
   try {
     const users = await manageUsersUseCase.getAllUsers();
     res.json(users);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
+};
+
+module.exports = {
+  createUser,
+  getUserById,
+  updateUser,
+  deleteUser,
+  getAllUsers,
 };

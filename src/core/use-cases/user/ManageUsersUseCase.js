@@ -16,8 +16,8 @@ class ManageUsersUseCase {
     return await this.userRepository.getUserById(id);
   }
 
-  async updateUser(userData) {
-    const updatedUser = new User(userData.id, userData.name, userData.email);
+  async updateUser(id, userData) {
+    const updatedUser = new User(id, userData.name, userData.email);
     updatedUser.validate();
 
     return await this.userRepository.update(updatedUser);
