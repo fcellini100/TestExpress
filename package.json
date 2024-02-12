@@ -8,16 +8,6 @@
     "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fcellini100/TestExpress.git"
-  },
-  "author": "Fernando Cellini",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fcellini100/TestExpress/issues"
-  },
-  "homepage": "https://github.com/fcellini100/TestExpress#readme",
   "devDependencies": {
     "nodemon": "^3.0.3",
     "prettier": "3.2.5"
