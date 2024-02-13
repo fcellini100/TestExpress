@@ -8,8 +8,14 @@ Testing ExpressJs
   npm install
 ```
 
-## Run Locally
+## Run Locally (nodemon)
 
 ```bash
   npm run dev
+```
+
+## Swagger (I was bored)
+
+```bash
+  http://localhost:3000/api-docs/
 ```

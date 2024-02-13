@@ -1,4 +1,6 @@
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swaggerConfig');
 const userRoutes = require('./interfaces/routes/userRoutes');
 const todoRoutes = require('./interfaces/routes/todoRoutes');
 const app = express();
@@ -12,6 +14,8 @@ app.use((req, _res, next) => {
   console.log(`${new Date()}: ${req.method} ${req.path}`);
   next();
 });
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get('/', (_req, res) => {
   res.send({ msg: 'Hello World!' });

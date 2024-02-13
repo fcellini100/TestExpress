@@ -16,8 +16,8 @@ class ManageTodosUseCase {
     return await this.todoRepository.getTodoById(id);
   }
 
-  async getTodoByUser(userId) {
-    return await this.todoRepository.getTodoByUser(userId);
+  async getTodosByUser(userId) {
+    return await this.todoRepository.getTodosByUser(userId);
   }
 
   async updateTodo(id, todoData) {

@@ -44,9 +44,9 @@ deleteTodo = async (req, res) => {
   }
 };
 
-getTodoByUser = async (req, res) => {
+getTodosByUser = async (req, res) => {
   try {
-    const users = await manageTodosUseCase.getTodoByUser(req.params.id);
+    const users = await manageTodosUseCase.getTodosByUser(req.params.id);
     res.json(users);
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -58,5 +58,5 @@ module.exports = {
   getTodoById,
   updateTodo,
   deleteTodo,
-  getTodoByUser,
+  getTodosByUser,
 };
