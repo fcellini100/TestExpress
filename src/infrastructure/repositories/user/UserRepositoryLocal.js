@@ -1,5 +1,5 @@
-const UserRepository = require('../../core/application/interfaces/UserRepository');
-const User = require('../../core/domain/user');
+const UserRepository = require('../../../core/application/interfaces/UserRepository');
+const User = require('../../../core/domain/user');
 
 class UserRepositoryLocal extends UserRepository {
   constructor() {
@@ -43,12 +43,12 @@ class UserRepositoryLocal extends UserRepository {
     return true;
   }
 
-  async getAllUsers() {
-    return this.users;
-  }
-
   async getUserById(userId) {
     return this.users.find(user => user.id === userId);
+  }
+
+  async getAllUsers() {
+    return this.users;
   }
 }
 

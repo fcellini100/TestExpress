@@ -6,19 +6,10 @@ class Todo {
     this.completed = completed;
   }
 
-  markCompleted() {
-    this.completed = true;
-  }
-
-  updateTitle(newTitle) {
-    if (!newTitle) {
+  validate() {
+    if (!this.title) {
       throw new Error('Title cannot be empty.');
     }
-    this.title = newTitle;
-  }
-
-  assignToUser(newUserId) {
-    this.userId = newUserId;
   }
 }
 

@@ -1,5 +1,5 @@
 const ManageUsersUseCase = require('../../core/use-cases/user/ManageUsersUseCase');
-const UserRepositoryLocal = require('../../infrastructure/repositories/UserRepositoryLocal');
+const UserRepositoryLocal = require('../../infrastructure/repositories/user/UserRepositoryLocal');
 
 const userRepository = new UserRepositoryLocal();
 
