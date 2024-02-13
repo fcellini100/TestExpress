@@ -16,6 +16,4 @@ Testing ExpressJs
 
 ## Swagger (I was bored)
 
-```bash
-  http://localhost:3000/api-docs/
-```
+[http://localhost:3000/api-docs/](http://localhost:3000/api-docs/)
